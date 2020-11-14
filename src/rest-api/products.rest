@@ -1,0 +1,33 @@
+@baseUrl = http://localhost:3000
+@contentType = application/json
+
+POST {{baseUrl}}/products HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "title" : "A Test",
+    "description" : "This is a first product",
+    "price" : 29.99
+}
+
+###
+
+GET {{baseUrl}}/products 
+
+###
+
+GET {{baseUrl}}/products/8
+
+###
+
+PATCH {{baseUrl}}/products/8
+Body: raw
+
+{
+    "title" : "++++ 111Test",
+}
+
+###
+
+DELETE  {{baseUrl}}/products/1
+
